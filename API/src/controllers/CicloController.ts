@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
+import CicloSchema from "../models/CicloSchema";
 
 class CicloController {
   listar(request: Request, response: Response) {
-    response.send("Hello World com ts-node-dev mais uma vez!");
+    response.json(CicloSchema.find());
   }
 
   listarPorId(request: Request, response: Response){
@@ -17,14 +18,12 @@ class CicloController {
     response.json(objeto);
   }
 
-  cadastrar(request: Request, response: Response){
-    const pessoa = request.body;
-    console.log(pessoa);
-    const objeto = {
-      msg: "Cliente cadastrado com sucesso!",
-      pessoa,
-    };
-    response.json(objeto);
+  async cadastrar(request: Request, response: Response){
+    //Lembrar dos erros da última aula
+    const ciclo = request.body;
+    console.log(ciclo);
+    const cicloCadastrado = await CicloSchema.create(ciclo);
+    response.json(cicloCadastrado);
   }
 }
 
