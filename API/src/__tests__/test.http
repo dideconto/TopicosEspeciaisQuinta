@@ -2,7 +2,7 @@
 GET http://localhost:3000/ciclo/listar
 
 ###
-GET http://localhost:3000/ciclo/listar/123456789/98745
+GET http://localhost:3000/ciclo/listar/6081fd969261e237bc5368e1
 
 ### Requisição correta!
 POST http://localhost:3000/ciclo/cadastrar
