@@ -1,0 +1,13 @@
+<ul>
+    <li *ngFor="let ciclo of ciclos">
+        {{ ciclo._id }}
+    </li>
+</ul>
+
+<select name="" id="">
+    <option *ngFor="let ciclo of ciclos">
+        {{ ciclo._id }}
+    </option>
+</select>
+
+<a routerLink="/ciclo/cadastrar">Novo Ciclo</a>

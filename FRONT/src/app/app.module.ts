@@ -1,18 +1,24 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TesteComponent } from './teste/teste.component';
+import { ListarComponent } from './components/views/listar/listar.component';
+import { CadastrarComponent } from './components/views/cadastrar/cadastrar.component';
+import { HeaderComponent } from './components/template/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TesteComponent,
+    ListarComponent,
+    CadastrarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
