@@ -40,11 +40,7 @@ class CicloController {
   async cadastrar(request: Request, response: Response) {
     try {
       const novoCiclo = await CicloSchema.create(request.body);
-      response.status(201).json({
-        data: novoCiclo,
-        error: false,
-        msg: "Ciclo cadastrado com sucesso!",
-      });
+      response.status(201).json(novoCiclo);
     } catch (error) {
       response.status(400).json({
         data: error,

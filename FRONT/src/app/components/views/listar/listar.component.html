@@ -1,13 +1,24 @@
-<ul>
-    <li *ngFor="let ciclo of ciclos">
-        {{ ciclo._id }}
-    </li>
-</ul>
+<a routerLink="/ciclo/cadastrar"> Novo Ciclo </a>
 
-<select name="" id="">
-    <option *ngFor="let ciclo of ciclos">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Data do Ciclo</th>
+      <th>Criado em</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ciclo of ciclos">
+      <td>
         {{ ciclo._id }}
-    </option>
-</select>
-
-<a routerLink="/ciclo/cadastrar">Novo Ciclo</a>
+      </td>
+      <td>
+        {{ ciclo.data | date: "MMMM - yyyy" }}
+      </td>
+      <td>
+        {{ ciclo.createdAt | date: "dd/MM/yyyy HH:mm:ss" }}
+      </td>
+    </tr>
+  </tbody>
+</table>
