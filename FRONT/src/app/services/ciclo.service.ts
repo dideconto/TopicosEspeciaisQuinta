@@ -13,7 +13,7 @@ export class CicloService {
   constructor(private http: HttpClient) { }
 
   listar(): Observable<Ciclo[]>{
-    return this.http.get<Ciclo[]>(`${this.baseURL}ciclo/listar`);
+    return this.http.get<Ciclo[]>(`${this.baseURL}ciclo/listar/`);
   }
 
   cadastrar(ciclo: Ciclo): Observable<Ciclo>{

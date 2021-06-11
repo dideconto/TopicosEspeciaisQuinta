@@ -1,4 +1,4 @@
-import { CicloService } from './../../../services/ciclo.service';
+import { CicloService } from "./../../../services/ciclo.service";
 import { Ciclo } from "./../../../models/Ciclo";
 import { Component, OnInit } from "@angular/core";
 
@@ -8,15 +8,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./cadastrar.component.css"],
 })
 export class CadastrarComponent implements OnInit {
-  ciclo: Ciclo = new Ciclo(); 
+  data!: string;
 
   constructor(private service: CicloService) {}
 
   ngOnInit(): void {}
 
   cadastrar(): void {
-    this.service.cadastrar(this.ciclo).subscribe((ciclo) => {
-      console.log(ciclo)      
+    let ciclo = new Ciclo();
+    ciclo.data = new Date(this.data);
+    this.service.cadastrar(ciclo).subscribe((ciclo) => {
+      console.log(ciclo);
     });
   }
 }
